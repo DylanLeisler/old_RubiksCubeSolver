@@ -1,0 +1,157 @@
+
+***this is a rough code to print out every value in order
+
+/*printf("\n\n%d %d %d     ", Rubiks_Cube.front.row1.col1, Rubiks_Cube.front.row1.col2, Rubiks_Cube.front.row1.col3);
+	printf(" %d %d %d     ", Rubiks_Cube.back.row1.col1, Rubiks_Cube.back.row1.col2, Rubiks_Cube.back.row1.col3);
+	printf(" %d %d %d\n", Rubiks_Cube.top.row1.col1, Rubiks_Cube.top.row1.col2, Rubiks_Cube.top.row1.col3);
+
+	printf("%d %d %d     ", Rubiks_Cube.front.row2.col1, Rubiks_Cube.front.row2.col2, Rubiks_Cube.front.row2.col3);
+	printf(" %d %d %d     ", Rubiks_Cube.back.row2.col1, Rubiks_Cube.back.row2.col2, Rubiks_Cube.back.row2.col3);
+	printf(" %d %d %d\n", Rubiks_Cube.top.row2.col1, Rubiks_Cube.top.row2.col2, Rubiks_Cube.top.row2.col3);
+
+	printf("%d %d %d     ", Rubiks_Cube.front.row3.col1, Rubiks_Cube.front.row3.col2, Rubiks_Cube.front.row3.col3);
+	printf(" %d %d %d     ", Rubiks_Cube.back.row3.col1, Rubiks_Cube.back.row3.col2, Rubiks_Cube.back.row3.col3);
+	printf(" %d %d %d\n\n", Rubiks_Cube.top.row3.col1, Rubiks_Cube.top.row3.col2, Rubiks_Cube.top.row3.col3);
+
+	printf("\n\n%d %d %d     ", Rubiks_Cube.bottom.row1.col1, Rubiks_Cube.bottom.row1.col2, Rubiks_Cube.bottom.row1.col3);
+	printf(" %d %d %d     ", Rubiks_Cube.left.row1.col1, Rubiks_Cube.left.row1.col2, Rubiks_Cube.left.row1.col3);
+	printf(" %d %d %d\n", Rubiks_Cube.right.row1.col1, Rubiks_Cube.right.row1.col2, Rubiks_Cube.right.row1.col3);
+
+	printf("%d %d %d     ", Rubiks_Cube.bottom.row2.col1, Rubiks_Cube.bottom.row2.col2, Rubiks_Cube.bottom.row2.col3);
+	printf(" %d %d %d     ", Rubiks_Cube.left.row2.col1, Rubiks_Cube.left.row2.col2, Rubiks_Cube.left.row2.col3);
+	printf(" %d %d %d\n", Rubiks_Cube.right.row2.col1, Rubiks_Cube.right.row2.col2, Rubiks_Cube.right.row2.col3);
+
+	printf("%d %d %d     ", Rubiks_Cube.bottom.row3.col1, Rubiks_Cube.bottom.row3.col2, Rubiks_Cube.bottom.row3.col3);
+	printf(" %d %d %d     ", Rubiks_Cube.left.row3.col1, Rubiks_Cube.left.row3.col2, Rubiks_Cube.left.row3.col3);
+	printf(" %d %d %d\n\n", Rubiks_Cube.right.row3.col1, Rubiks_Cube.right.row3.col2, Rubiks_Cube.right.row3.col3);*/
+
+
+
+***The code below is used to test printing function with every possible value in order
+
+#define r(S, RO, CO) R->##S.row##RO.col##CO
+#define test {printf("\n\t\t0\n");} else { printf("\n\t\tFailure\n"); }
+#define MATCH(z, x, y) if((numTable(P_row, P_col, P_val) == r(##z, x, y)) ) test
+
+#define finalLayer(z, y) if (P_val == 1){MATCH(z, y, 1)}else if (P_val == 2){MATCH(z, y, 2)}else{MATCH(z, y, 3)}
+
+
+			if (second_half == false)
+			{
+				if (P_row == 0)
+				{
+					if (P_col == 1)
+					{
+						finalLayer(front, 1)
+
+					}
+					else if (P_col == 2)
+					{
+						finalLayer(front, 2)
+					}
+					else
+					{
+						finalLayer(front, 3)
+					}
+				}
+				else if (P_row == 1)
+				{
+					if (P_col == 1)
+					{
+						finalLayer(back, 1)
+
+					}
+					else if (P_col == 2)
+					{
+						finalLayer(back, 2)
+					}
+					else
+					{
+						finalLayer(back, 3)
+					}
+				}
+				else if (P_row == 2)
+				{
+					if (P_col == 1)
+					{
+						finalLayer(top, 1)
+
+					}
+					else if (P_col == 2)
+					{
+						finalLayer(top, 2)
+					}
+					else
+					{
+						finalLayer(top, 3)
+					}
+				}			
+				
+			}
+			else
+			{
+				if (P_row == 0)
+				{
+					if (P_col == 1)
+					{
+						finalLayer(bottom, 1)
+
+					}
+					else if (P_col == 2)
+					{
+						finalLayer(bottom, 2)
+					}
+					else
+					{
+						finalLayer(bottom, 3)
+					}
+				}
+				else if (P_row == 1)
+				{
+					if (P_col == 1)
+					{
+						finalLayer(left, 1)
+
+					}
+					else if (P_col == 2)
+					{
+						finalLayer(left, 2)
+					}
+					else
+					{
+						finalLayer(left, 3)
+					}
+				}
+				else if (P_row == 2)
+				{
+					if (P_col == 1)
+					{
+						finalLayer(right, 1)
+
+					}
+					else if (P_col == 2)
+					{
+						finalLayer(right, 2)
+					}
+					else
+					{
+						finalLayer(right, 3)
+					}
+				}
+
+			}
+
+			***This is used to test the printing functions output from the calling-scope
+
+			
+	//for(int a = 0; a <= 5; a++)
+	//	for (int b = 0; b <= 3; b++)
+	//		for (int c = 0; c <= 3; c++)
+	//		{
+	//			if (a >= 3) {
+	//				printf("\nOUTSIDE FUNC: %d\n", numTable[a - 3][b][c]);
+	//			}
+	//			else
+	//				printf("\nOUTSIDE FUNC: %d\n", numTable[a][b][c]);
+
+	//       }

@@ -1,0 +1,127 @@
+
+Solution is based on evaluating matrix as a system of relations. Each side is evaluated and reduced to the amount of related colors, which always ranges from 1-9. This reduces possible colors to a true/false binary. The program also no longer needs to evaluate on a square by square basis (PROOF_1)  for most calculations, but can rather check and alter values 
+
+PROOF_1
+{
+	 (6^54)-() total possibilities
+	 
+	 (6^54)
+	
+	
+	(Num of sides * Num squares per side) = 54. 
+	Each square opens a 6x more possibilities
+	
+	Num of colors = 6
+	Max times a color can occur = 9
+	
+}
+
+
+
+6 unique positions to begin transformation(Tform)
+
+3 unique repeating Tforms each (before tree collapse)
+
+
+UNIQUE Tform options
+{	
+	Square choices
+	{
+		Bottom: 1, 2, 3
+		Left:   1, 2, 3
+	}
+		
+	Directions
+	{
+		Up/Right = 1
+	}
+	
+	Total
+	{
+		6 Unique options per Tform
+	}
+}
+
+
+
+
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
+#define i int
+#define PF(x, y) printf(x , y)
+
+char* formatFtoStr(double double_value);
+
+
+int main()
+{
+   i numColors = 6;
+   i numMaxOfEachColor = 9;
+   
+   i numOfSides = 6;
+   i numOfSquaresPerSide = 9;
+   i numOfSquares = numOfSides * numOfSquaresPerSide; //54
+   
+   double totalPossible = 0;
+   
+   totalPossible = pow( ((double)numColors), numOfSquares);
+    
+    char stringD[50] = {0};
+    
+    snprintf(stringD, 50, "%f", totalPossible);
+   
+   PF("The content of totalPossible is %s", stringD);
+
+    return 0;
+}
+
+char* formatFtoStr(double fVal)
+{
+    
+    typedef struct derivative_structure
+    {
+        int length;
+        char[15];
+        
+    } Derivative;
+    
+    char ldest[70] = "";
+    char lStr[50] = "";
+    
+    snprintf(lStr, 50, "%f", fVal);
+    
+    int counter = 0;
+    
+    switch (sizeof(fVal))
+    {
+        case 24
+        
+        strcpy(ldest, " Septillion");
+        
+        case 21
+        case 18
+        case 15
+        case 12
+        case 9:
+        
+        case 6:
+        break;
+        
+        default:
+        
+    }
+    
+    //6 = 1mil, 
+    
+}

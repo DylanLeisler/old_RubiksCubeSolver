@@ -1,0 +1,304 @@
+#include <time.h>
+#include <stdio.h>
+
+int main()
+{
+    clock_t tic = clock();
+
+    my_expensive_function_which_can_spawn_threads();
+
+    clock_t toc = clock();
+
+    printf("Elapsed: %f seconds\n", (double)(toc - tic) / CLOCKS_PER_SEC);
+
+    return 0;
+}
+
+cube.position = 1;
+
+Apply_Move(&cube, movement_type)
+{
+	if( cube.transformations_applied == pow(6, cube.position) )
+	cube.position++;
+	
+	if(cube.position > MAX_MOVES)
+	//end
+	
+	int oldRelations = cube->highestRelational;
+	int counter = 0;
+	
+	do
+	{
+	counter++;
+	Transform_Cube(cube, );
+	calcRelations(&cube)
+	
+	if(counter)
+	
+	}
+	while( (oldRelations <= cube->highestRelational));
+	
+}
+
+Update_Move(&movement_type)
+
+
+
+Each position of the rubics cube can be represented by an array that has an elements for
+each side, and then has a second dimension of elements for each square. So [6][9] respectively. 
+Int can hold 10 digits (max 2 billion) so it can hold a single value for every square. 
+
+
+Declare a bool variable = {0} that contains an element for every possible position rubiks cube position
+bool every_possible_position[6][6] = {0} //the first element represents each side
+
+Make a function which performs 
+
+
+
+There are 6 unique match sets for each rubix cube position (one for each color.)
+Therefore, I need an array with 6 elements. Each element needs to store 6 different
+'positions,' which is one for each color. The positions are represented by 2 digits
+or chars, ranging from 01-54 (a unique value for every one of the possible positions.)
+This means a total of 12 digits, and demands a long long int, which has 19 spaces.
+EXAMPLE:
+
+	long int patternMap[6] = {0};
+	
+	patternMap[0] = {01 10 15 25 37 50};//Each two digits represent a position corresponding to the value of element 0
+					  01 23 45 67 89 01  //This shows it is 12 digits long
+					  
+	patternMap[1] = {030513233452} //Positions 3, 5, 13, 23, 34, and 52 are all identical
+	
+I need a linked list that contains 54 int values, 1-54, each representing a square on the cube. 
+Each time a match is found, that particular value will be deleted from the list. That way,
+progressively less positions are being checked.
+
+void Generate_AllCubePositions(new_cube* Cube);
+{
+	
+	surface* side = NULL;
+	void* current_row = NULL;
+	int* current_col = NULL;
+	
+	short counter = 0;
+	
+	for(int s = 0; s < 6; s++)
+		for(int r = 0; r < 3; r++)
+			for(int c = 0; c < 3; c++)
+			{
+			
+				switch(s)
+				{
+					case 0:
+					side = Cube->*front;
+					break;
+					case 1:
+					side = Cube->*back;
+					break;
+					case 2:
+					side = Cube->*top;
+					break;
+					case 3:
+					side = Cube->*bottom;
+					break;
+					case 4:
+					side = Cube->*left;
+					break;
+					case 5:
+					side = Cube->*right;
+					break;
+					default: //return error
+					break;
+				}
+
+				switch(r)
+				{
+					case 0:
+					current_row = side->*row1;
+					break;
+					case 1:
+					current_row = side->*row2;
+					break;
+					case 2:
+					current_row = side->*row3;
+					break;
+					default: //return error
+					break;
+				}
+				
+				switch(c)
+				{
+					case 0:
+					current_col = current_row->*col1;
+					break;
+					case 1:
+					current_col = current_row->*col2;
+					break;
+					case 2:
+					current_col = current_row->*col3;
+					break;
+					default: //return error
+					break;
+				}
+				
+				
+				Cube->Cube_Pointers[counter] = current_col;
+				counter++;
+			}
+}
+
+//WHAT I AM CURRENTLY WORKING ON
+
+void Generate_ColorArray(new_cube* Cube_Pointers, int local_array)
+{
+	int local_array[NUM_OF_COLORS][NUM_OF_EACH_COLOR] = {{0}}; //6 by 9
+	int lcArray_position[NUM_OF_COLORS] = {0};
+
+	for ts < TOTAL_SQUARES //Cycles through every square on cube
+
+		int color = *Cube_Pointers[ts]; //the color of the current square being pointed to
+		local_array[color][lcArray_position[color]] = ts+1; //this will set the next open value slot in local_array to the current square being examined
+		lcArray_position[color]++; //this advances the position of whichever color slot for local_array that just got updated.
+}
+
+void Multiply_ColorArray(int* color_array_INT, long long int* color_array)
+{
+	
+	for i < NUM_OF_COLORS //does the below series of loops once for each color
+	
+		for int position = 0; position < NUM_OF_EACH_COLOR //this advances one at a time through each stored value in the color_array
+		
+			long long int color_array[i][position] = color_array_INT[i][position]; //move from int to long long int BEFORE multiplier is applied
+		
+			for multiplier = (NUM_OF_EACH_COLOR - (position + 1); multiplier > 0; //the first value needs to be multiplied by 100 a total of 8 times thus
+																				  //for the last iteration of the position loop, the multiplier loop must fail
+				color_array[i][position] *= 100; // <---- this value needs to be passed outside of this function
+			
+	
+	
+}
+
+void Convert_ArrayToMap
+{} //this will basically cycle through the multiplied/updated color_array of long long int type and will add all the values in each dimension Y of X together
+//thus leaving only an X element with all relevant information contained within
+
+//IGNORE EVERYTHING ELSE	
+	
+	
+void Generate_PatternMap(int* pCube, long int* pMap, consecutiveIntLL_t* list)
+{
+
+	consecutiveIntLL* current_position_LL = list.head;
+	int numMatches = 0;
+
+	for(int i = 0; i < TOTAL_SQUARES; i++)
+	{
+		while(current_position_LL != NULL)
+		{
+			if( *(pCube + i) == current_position_LL->value)
+			{
+				pMap[side?]
+				numMatches++;
+				//update 
+			}//if there is a match
+			current_position_LL = current_position_LL->next;
+		} //while there is more list to eval
+		
+	} //for loop
+
+	const surface* pSide[6] = {NULL};
+	pSide[0] = cube->*front;
+	pSide[1] = cube->*back;
+	pSide[2] = cube->*top;
+	pSide[3] = cube->*bottom;
+	pSide[4] = cube->*left;
+	pSide[5] = cube->*right;
+	
+	consecutiveIntLL_t* current_position = list.tableOfContents;
+	
+	for(int i = 0; i < 6; i++) //each iteration checks a side of the cube
+	{
+	
+	*(pMap + i) = (long int) Return_PatternMapSide(new_cube* cube, consecutiveIntLL_t* position_ll, const surface* side)
+	{
+		
+		long int returnValue = 0;
+		
+		short incrementalValue = floor(position_ll / 9) + 1;
+		long int multiplier_row = 0;
+		long int multiplier_col = 0;
+		
+		for(int i = 0; i < 3; i++)
+			for(int k = 0; k < 3; k++)
+			{
+				switch(i)
+				{
+					case 0:
+					current_row = side->*row1;
+					multiplier_row = 10000;
+					break;
+					case 1:
+					current_row = side->*row2;
+					multiplier_row = 100;
+					break;
+					case 2:
+					current_row = side->*row3;
+					multiplier_row = 1;
+					break;
+					default: //return error
+					break;
+				}
+				
+					switch(k)
+				{
+					case 0:
+					current_col = current_row->*col1;
+					multiplier_col = 10000;
+					break;
+					case 1:
+					current_col = current_row->*col2;
+					multiplier_col = 100;
+					break;
+					case 2:
+					current_col = current_row->*col3;
+					multiplier_col = 1;
+					break;
+					default: //return error
+					break;
+				}
+				
+				for(int j = 0; j < TOTAL_SQUARES; j++)
+				{
+				
+					if(current_col == )
+				
+				}
+				
+			}
+	
+	}
+	
+	
+	
+	} //for loop: returning pattern map
+	
+
+
+
+	Repair_IntLList(int numNodes, consecutiveIntLL_t* llist)
+	{
+	//this function should take the total number of nodes in a consecutive int linked list
+	//and it should take the pointer to that list's special head type, which will include
+	//a pointer to an array of pointers, each of which will point to the original linked list
+	//node locations. It will use these to navigate to each one and reassign its value. 
+	//An alternative is to actively store the locations as I progress through the linked list
+	//and pass those values into this function at the end to quickly fix the list.
+	}
+	
+} //end generate_map
+	
+	
+	
+
+
